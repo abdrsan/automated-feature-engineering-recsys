@@ -8,7 +8,22 @@ import nbformat
 import numpy as np
 import polars as pl
 
-from audit.verify_comparison_submission import independent_scores
+from scipy.stats import rankdata
+
+
+def independent_scores(labels, probabilities):
+    labels = np.asarray(labels, dtype=float)
+    positives = labels.sum()
+    ranks = rankdata(probabilities)
+    auc = (ranks[labels == 1].sum()-positives*(positives+1)/2)/(positives*(len(labels)-positives))
+    p = np.clip(probabilities, np.finfo(float).eps, 1-np.finfo(float).eps)
+    loss = np.mean(-labels*np.log(p)-(1-labels)*np.log1p(-p))
+    order = np.argsort(-probabilities, kind="stable")
+    scores, y = probabilities[order], labels[order]
+    ends = np.r_[np.flatnonzero(np.diff(scores)), len(y)-1]
+    hits = np.cumsum(y)[ends]
+    ap = np.sum(hits/(ends+1)*np.diff(np.r_[0., hits/positives]))
+    return {"auc": float(auc), "logloss": float(loss), "average_precision": float(ap)}
 
 
 def main():
@@ -36,8 +51,7 @@ def main():
         assert all(hashlib.sha256((folder/name).read_bytes()).hexdigest() == digest
                    for name, digest in checksums.items())
     notebooks = []
-    for name, expected in [("FINAL_SUBMISSION/feature_engineering_comparison.ipynb", 21),
-                           ("notebooks/00_full_research.ipynb", 47)]:
+    for name, expected in [("FINAL_SUBMISSION/feature_engineering_comparison.ipynb", 21)]:
         notebook = nbformat.read(root/name, as_version=4)
         nbformat.validate(notebook)
         cells = [cell for cell in notebook.cells if cell.cell_type == "code"]

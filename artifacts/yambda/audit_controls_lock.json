@@ -1,9 +1,0 @@
-{
-  "sources": [
-    "auto_fixed_windows_top32",
-    "auto_adaptive_top32",
-    "shared_windows_control"
-  ],
-  "selection_data": "validation_search",
-  "not_used_to_change_main_lock": true
-}

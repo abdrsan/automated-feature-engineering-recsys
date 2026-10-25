@@ -1,4 +1,4 @@
-"""Independent audit tests: no reuse of the project's reference/oracle helpers."""
+"""Temporal feature and metric checks against direct calculations on small data."""
 from datetime import datetime, timedelta
 
 import numpy as np
@@ -54,7 +54,7 @@ def expected_value(frame, spec, query):
 
 @pytest.mark.parametrize("keys", [(), ("user_id",), ("item_id",), ("user_id", "item_id"), ("user_id", "category_id")])
 @pytest.mark.parametrize("window", [None, 1, 3])
-def test_audit_raw_history_oracle_with_ties_and_null_values(keys, window):
+def test_raw_history_oracle_with_ties_and_null_values(keys, window):
     data = toy()
     specs = [FeatureSpec(keys, e, a, window, value_column="amount" if a in {"sum","mean","min","max"} else "item_id" if a == "nunique" else None)
              for e in ["all", "click", "purchase"] for a in ["count", "sum", "mean", "min", "max", "nunique", "recency", "event_rate", "frequency"]]
@@ -67,14 +67,14 @@ def test_audit_raw_history_oracle_with_ties_and_null_values(keys, window):
         np.testing.assert_allclose(out[spec.name].to_numpy(), expected, rtol=2e-6, atol=1e-6, equal_nan=True, err_msg=spec.name)
 
 
-def test_audit_requested_jan_1_jan_2_jan_5_example():
+def test_requested_jan_1_jan_2_jan_5_example():
     data = toy().filter(pl.col("row_id").is_in([0, 1, 3])).with_row_index("new").drop("row_id").rename({"new":"row_id"})
     spec = FeatureSpec(("user_id", "item_id"), "click", "count")
     result, _ = generate_features(data, [spec])
     assert result[spec.name].to_list() == [0., 1., 2.]
 
 
-def test_audit_current_and_future_outcomes_do_not_change_any_earlier_feature():
+def test_current_and_future_outcomes_do_not_change_any_earlier_feature():
     data = toy()
     specs = [FeatureSpec(k, e, a, w, "amount" if a == "mean" else None)
              for k in [("user_id",), ("item_id",), ("user_id", "item_id"), ("user_id", "category_id")]
@@ -90,7 +90,7 @@ def test_audit_current_and_future_outcomes_do_not_change_any_earlier_feature():
                                after.filter(pl.col("row_id").is_in(ids.implode())).drop("row_id").to_numpy(), equal_nan=True)
 
 
-def test_audit_null_entity_join_does_not_expand_or_drop_queries():
+def test_null_entity_join_does_not_expand_or_drop_queries():
     data = toy().with_columns(pl.when(pl.col("row_id") % 2 == 0).then(None).otherwise(pl.col("category_id")).alias("category_id"))
     specs = [FeatureSpec(("user_id", "category_id"), "all", "count", w) for w in [None, 3]]
     out, _ = generate_features(data, specs)
@@ -99,7 +99,7 @@ def test_audit_null_entity_join_does_not_expand_or_drop_queries():
     assert not out.drop("row_id").null_count().to_numpy().any()
 
 
-def test_audit_ranking_formula_single_positive_at_rank_two():
+def test_ranking_formula_single_positive_at_rank_two():
     data = pl.DataFrame({"user_id":[1,1,1], "item_id":[10,11,12], "row_id":[0,1,2],
                          "timestamp":[datetime(2020,1,1)]*3, "label":[0,1,0]})
     metrics = ranking_metrics(data, np.array([.9,.8,.7]), ks=(1,2,3))
@@ -108,14 +108,14 @@ def test_audit_ranking_formula_single_positive_at_rank_two():
     assert metrics["recall_3"] == 1 and metrics["map_3"] == .5
 
 
-def test_audit_rank_duplicate_item_query_rejected():
+def test_rank_duplicate_item_query_rejected():
     data = pl.DataFrame({"user_id":[1,1], "item_id":[10,10], "row_id":[0,1],
                          "timestamp":[datetime(2020,1,1)]*2, "label":[0,1]})
     result = ranking_metrics(data, np.array([.2,.9]))
     assert result["ranking_groups"] == 0 and result["ranking_groups_excluded_duplicates"] == 1
 
 
-def test_audit_temporal_parts_exclude_equal_timestamp_and_future():
+def test_temporal_parts_exclude_equal_timestamp_and_future():
     data = pl.DataFrame({"timestamp":[datetime(2020,1,1)+timedelta(hours=i//4) for i in range(200)]})
     split = temporal_split(data)
     parts = [data[split.train], data[split.search], data[split.audit], data[split.test]]
@@ -123,7 +123,7 @@ def test_audit_temporal_parts_exclude_equal_timestamp_and_future():
     assert all(a["timestamp"].max() < b["timestamp"].min() for a,b in zip(parts,parts[1:]))
 
 
-def test_audit_manual_reference_cannot_ignore_a_better_validated_ablation(monkeypatch, tmp_path):
+def test_manual_reference_cannot_ignore_a_better_validated_ablation(monkeypatch, tmp_path):
     import json
     from types import SimpleNamespace
     import scripts.run_study as pipeline
@@ -141,7 +141,7 @@ def test_audit_manual_reference_cannot_ignore_a_better_validated_ablation(monkey
     assert selected["name"]=="plus_user_temporal"
 
 
-def test_audit_cache_invalidated_by_engine_version(monkeypatch,tmp_path):
+def test_cache_invalidated_by_engine_version(monkeypatch,tmp_path):
     import scripts.run_study as pipeline
     data=toy()
     calls=[]
@@ -157,7 +157,7 @@ def test_audit_cache_invalidated_by_engine_version(monkeypatch,tmp_path):
     assert len(calls)==2 and not a.equals(b)
 
 
-def test_audit_tpe_resume_matches_uninterrupted_history(tmp_path):
+def test_tpe_resume_matches_uninterrupted_history(tmp_path):
     from src.model import create_tuning_study, save_tuning_sampler
     import optuna
     optuna.logging.set_verbosity(optuna.logging.ERROR)
@@ -174,13 +174,13 @@ def test_audit_tpe_resume_matches_uninterrupted_history(tmp_path):
     assert [t.value for t in continuous.trials]==[t.value for t in resumed.trials]
 
 
-def test_audit_split_rejects_unsorted_input():
+def test_split_rejects_unsorted_input():
     data=toy().reverse()
     with pytest.raises(ValueError,match="sorted"):
         temporal_split(data)
 
 
-def test_audit_full_eda_generated_with_all_expected_partitions():
+def test_full_eda_generated_with_all_expected_partitions():
     from src.data import study_statistics
     data=pl.concat([toy().with_columns(pl.col("timestamp")+pl.duration(days=14*i)) for i in range(8)]).drop("row_id").with_row_index("row_id")
     result=study_statistics(data,temporal_split(data))
@@ -190,7 +190,7 @@ def test_audit_full_eda_generated_with_all_expected_partitions():
     assert result["splits"]["test"]["positive_rate"] is None
 
 
-def test_audit_changed_engine_helper_changes_cache_signature(monkeypatch):
+def test_changed_engine_helper_changes_cache_signature(monkeypatch):
     import src.feature_engine as engine
     before=engine.feature_engine_signature()
     def different_mask(event):
@@ -199,7 +199,7 @@ def test_audit_changed_engine_helper_changes_cache_signature(monkeypatch):
     assert engine.feature_engine_signature()!=before
 
 
-def test_audit_model_resume_rejects_stale_implementation(tmp_path):
+def test_model_resume_rejects_stale_implementation(tmp_path):
     import json
     from types import SimpleNamespace
     from src.experiments import ExperimentRunner
@@ -216,7 +216,7 @@ def test_audit_model_resume_rejects_stale_implementation(tmp_path):
         runner.run("audit",[],{})
 
 
-def test_audit_reference_sum_sql_matches_polars_for_empty_history():
+def test_reference_sum_sql_matches_polars_for_empty_history():
     import sqlite3
     from src.feature_spec import to_sql
     data=toy()
@@ -230,7 +230,7 @@ def test_audit_reference_sum_sql_matches_polars_for_empty_history():
     database.close()
 
 
-def test_audit_fixed_pool_keeps_fixed_alias_of_adaptive_only_duplicate():
+def test_fixed_pool_keeps_fixed_alias_of_adaptive_only_duplicate():
     from src.feature_selection import prune_candidates, prune_fixed_candidates
     data=pl.DataFrame({"row_id":range(8),"user_id":[1]*8,"item_id":range(8),
         "event":["click"]*8,"label":[0]*8,
@@ -246,7 +246,7 @@ def test_audit_fixed_pool_keeps_fixed_alias_of_adaptive_only_duplicate():
     assert matrix[specs[1].name][6]==6 and matrix[specs[0].name][6]==0
 
 
-def test_audit_reference_sql_matches_null_entity_keys():
+def test_reference_sql_matches_null_entity_keys():
     import sqlite3
     from src.feature_spec import to_sql
     data=toy().with_columns(pl.when(pl.col("row_id")<4).then(None).otherwise(pl.col("user_id")).alias("user_id"))

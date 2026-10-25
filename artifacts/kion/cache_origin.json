@@ -1,9 +1,0 @@
-{
-  "source": "artifacts/intermediate_v2/kion/cache",
-  "reuse": "Content-addressed temporal matrices only; identical engine/data/specs; models and Optuna trials retrained",
-  "verified_after_run": {
-    "status": "PASS",
-    "evidence": "artifacts/audit/after/kion/summary.json",
-    "regenerated_feature_cells": 814799209
-  }
-}

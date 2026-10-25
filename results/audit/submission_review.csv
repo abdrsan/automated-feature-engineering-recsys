@@ -1,9 +1,0 @@
-Category,Status,Evidence / limitation
-Methodological correctness,PARTIAL,Known holdout; one temporal split
-Fairness of comparison,PASS,Same target/rows/model parameters/seed; same candidate rows
-Feature engineering quality,PASS,27 original definitions reused without AST changes
-Data leakage prevention,PARTIAL,Engine tests PASS; label/metadata availability assumed
-Experimental evidence,PASS,Original boosters and fresh full comparison independently replayed
-Interpretation,PASS,"No official benchmark, unique-window or unconditional-significance claims"
-Reproducibility,PASS,"Full notebook in clean venv, isolated demo; current macOS only"
-Clarity,PASS,Four submission files; ten notebook sections

@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 from sklearn.metrics import average_precision_score, log_loss, roc_auc_score
 
-from audit.verify_comparison_submission import independent_scores
+from scripts.verify_published_results import independent_scores
 
 
 @pytest.mark.parametrize("labels,probabilities", [

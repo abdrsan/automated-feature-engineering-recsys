@@ -1,0 +1,9 @@
+{
+  "delta_logloss": -0.005064914047550239,
+  "ci95": [
+    -0.00554330551392229,
+    -0.0045560444406228815
+  ],
+  "repeats": 300,
+  "conditional_on_fixed_models": true
+}

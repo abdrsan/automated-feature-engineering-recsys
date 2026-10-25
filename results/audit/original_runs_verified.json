@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "datasets": [
+    {
+      "dataset": "kion",
+      "status": "PASS",
+      "rows": 1594519,
+      "initial_candidates": 621,
+      "all_candidates_including_agent": 637,
+      "after_pruning": 493,
+      "selected": 493,
+      "spot_checks": 8176,
+      "regenerated_feature_cells": 814799209,
+      "model_prediction_replays": 10,
+      "seconds": 111.17747470800532,
+      "metric_comparisons": 140,
+      "max_metric_difference": 3.3306690738754696e-16,
+      "max_prediction_difference": 0.0
+    },
+    {
+      "dataset": "yambda",
+      "status": "PASS",
+      "rows": 989232,
+      "initial_candidates": 448,
+      "all_candidates_including_agent": 464,
+      "after_pruning": 442,
+      "selected": 32,
+      "spot_checks": 1328,
+      "regenerated_feature_cells": 82106256,
+      "model_prediction_replays": 10,
+      "seconds": 27.47125099999539,
+      "metric_comparisons": 140,
+      "max_metric_difference": 3.3306690738754696e-16,
+      "max_prediction_difference": 0.0
+    }
+  ]
+}

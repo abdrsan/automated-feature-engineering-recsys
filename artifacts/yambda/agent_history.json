@@ -1,0 +1,36 @@
+[
+  {
+    "round": 1,
+    "proposed": [
+      "user__like__event_rate__39d__all",
+      "user__like__event_rate__84d__all",
+      "user__like__event_rate__9d__all",
+      "user__like__event_rate__20d__all",
+      "user__like__event_rate__42d__all",
+      "user__like__event_rate__29d__all",
+      "user__like__event_rate__117d__all",
+      "user__like__event_rate__252d__all"
+    ],
+    "before_logloss": 0.17180923300739967,
+    "after_logloss": 0.17226233720338927,
+    "accepted": false,
+    "generation_seconds": 0.7369536659971345
+  },
+  {
+    "round": 2,
+    "proposed": [
+      "user__like__event_rate__58d__all",
+      "user__like__event_rate__126d__all",
+      "user__like__event_rate__5d__all",
+      "user__like__event_rate__10d__all",
+      "user__like__event_rate__2d__all",
+      "user__like__event_rate__4d__all",
+      "user__dislike__count__5d",
+      "user__dislike__count__10d"
+    ],
+    "before_logloss": 0.17180923300739967,
+    "after_logloss": 0.17176378945060536,
+    "accepted": false,
+    "generation_seconds": 0.568737042020075
+  }
+]

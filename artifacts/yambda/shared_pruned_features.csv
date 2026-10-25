@@ -1,0 +1,4 @@
+feature,reason
+global__like__count__180d,correlated_with:global__all__count__180d
+global__like__count__all,correlated_with:global__all__count__all
+user_item__dislike__count__all,correlated_with:user_item__dislike__count__180d

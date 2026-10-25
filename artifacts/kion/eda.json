@@ -1,0 +1,76 @@
+{
+  "rows": 1354072,
+  "users": 498082,
+  "items": 12272,
+  "start": "2021-03-13 00:00:00",
+  "end": "2021-08-08 00:00:00",
+  "schema": {
+    "row_id": "UInt32",
+    "user_id": "Int64",
+    "item_id": "Int64",
+    "age": "String",
+    "income": "String",
+    "gender": "String",
+    "kids_flg": "Int64",
+    "content_type": "String",
+    "release_year": "Float64",
+    "genres": "String",
+    "countries": "String",
+    "for_kids": "Float64",
+    "age_rating": "Float64",
+    "category_id": "String",
+    "author": "String",
+    "timestamp": "Datetime(time_unit='us', time_zone=None)",
+    "label": "Int8",
+    "event": "String",
+    "history_value": "Float64",
+    "time_is_relative": "Boolean"
+  },
+  "nulls": {
+    "row_id": 0,
+    "user_id": 0,
+    "item_id": 0,
+    "age": 0,
+    "income": 0,
+    "gender": 0,
+    "kids_flg": 255445,
+    "content_type": 0,
+    "release_year": 89,
+    "genres": 0,
+    "countries": 0,
+    "for_kids": 1323927,
+    "age_rating": 1,
+    "category_id": 0,
+    "author": 0,
+    "timestamp": 0,
+    "label": 0,
+    "event": 0,
+    "history_value": 0,
+    "time_is_relative": 0
+  },
+  "label_distribution": [
+    {
+      "label": 0,
+      "len": 737418
+    },
+    {
+      "label": 1,
+      "len": 616654
+    }
+  ],
+  "event_distribution": [
+    {
+      "event": "watch_high",
+      "len": 616654
+    },
+    {
+      "event": "watch_low",
+      "len": 737418
+    }
+  ],
+  "duplicate_events": 0,
+  "repeat_user_item_rows": 0,
+  "distinct_timestamps": 149,
+  "same_timestamp_rows": 1353923,
+  "memory_mb": 266.878475189209
+}

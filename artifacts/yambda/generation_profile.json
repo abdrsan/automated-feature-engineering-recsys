@@ -1,0 +1,91 @@
+{
+  "manual": {
+    "seconds": 16.01485079198028,
+    "memory_mb": 283.77030754089355,
+    "n_features": 87,
+    "groups": [
+      {
+        "entity": "user",
+        "seconds": 0.6262084170011804,
+        "n_features": 15
+      },
+      {
+        "entity": "item",
+        "seconds": 1.8724976249795873,
+        "n_features": 15
+      },
+      {
+        "entity": "user_item",
+        "seconds": 4.493540666997433,
+        "n_features": 15
+      },
+      {
+        "entity": "user_category",
+        "seconds": 5.170963291020598,
+        "n_features": 15
+      },
+      {
+        "entity": "user_author",
+        "seconds": 3.7987877920095343,
+        "n_features": 15
+      }
+    ],
+    "cutoff": "[T - window, T); all_history < T",
+    "audit_passed": true,
+    "peak_process_mb": 1189.90625,
+    "key": "de3f402f39b287d536a67fc15f8da75d9787c89b4423ac70dd08eddeb05a4439"
+  },
+  "additional_candidates": {
+    "seconds": 16.83785245899344,
+    "memory_mb": 1162.044916152954,
+    "n_features": 361,
+    "groups": [
+      {
+        "entity": "global",
+        "seconds": 1.0350660830154084,
+        "n_features": 44
+      },
+      {
+        "entity": "user",
+        "seconds": 1.0980346660071518,
+        "n_features": 35
+      },
+      {
+        "entity": "item",
+        "seconds": 1.67448416701518,
+        "n_features": 35
+      },
+      {
+        "entity": "user_item",
+        "seconds": 3.1356095839873888,
+        "n_features": 35
+      },
+      {
+        "entity": "category",
+        "seconds": 2.08523941700696,
+        "n_features": 44
+      },
+      {
+        "entity": "user_category",
+        "seconds": 3.199907500005793,
+        "n_features": 35
+      },
+      {
+        "entity": "author",
+        "seconds": 1.696478041994851,
+        "n_features": 46
+      },
+      {
+        "entity": "user_author",
+        "seconds": 2.7733567919931374,
+        "n_features": 35
+      }
+    ],
+    "cutoff": "[T - window, T); all_history < T",
+    "audit_passed": true,
+    "peak_process_mb": 4016.578125,
+    "key": "e382ab57bde3d3b40aacf969710eb7f82cb8cd77c4618476741736eccf53e735"
+  },
+  "n_candidates": 448,
+  "n_after_pruning": 442
+}

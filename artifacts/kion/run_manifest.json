@@ -1,0 +1,63 @@
+{
+  "dataset_fingerprint": "4adc2ae678430e8c530db721e757bc3e1aeea84989411c683857e3a530c2c40d",
+  "config": {
+    "seed": 42,
+    "threads": 4,
+    "split_fractions": [
+      0.7,
+      0.775,
+      0.85
+    ],
+    "hyperparameter_trials": 20,
+    "max_tuning_train_rows": 300000,
+    "max_estimators": 600,
+    "early_stopping_rounds": 40,
+    "objective": "logloss",
+    "bootstrap_repeats": 300,
+    "seeds": [
+      42,
+      2024,
+      7
+    ],
+    "dataset_name": "kion",
+    "run_representations": true
+  },
+  "auto_config": {
+    "windows": [
+      1,
+      3,
+      7,
+      14,
+      21,
+      30,
+      60,
+      90,
+      180,
+      null
+    ],
+    "max_features": 900,
+    "near_constant_fraction": 0.9999,
+    "max_missing_fraction": 0.999,
+    "correlation_threshold": 0.9999,
+    "selection_sizes": [
+      32,
+      64,
+      96,
+      128
+    ],
+    "agent_rounds": 2,
+    "agent_proposals_per_round": 8,
+    "keep_min_logloss_gain": 0.0001
+  },
+  "split": {
+    "train_end": 1103170,
+    "search_end": 1224295,
+    "validation_end": 1354072,
+    "n_rows": 1594519
+  },
+  "dataset": "kion",
+  "protocol_version": "audit-v3",
+  "selection_signature": "ce8bc015c52aaec1b4f1dded1f84a52ebbee20a4badc57473f0cc20a6bf66d0f",
+  "engine_version": "2",
+  "engine_signature": "bb73034936cc089091afa0df656073637c3b9f9078e5c7f02b0af56e6034afe0"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "dataset": "kion",
+  "rows": 1594519,
+  "experiments": 54,
+  "selected_specs": 493,
+  "hpo_trials": {
+    "manual": 20,
+    "auto": 20
+  },
+  "source_checksums_verified": true,
+  "ranking_nan_allowed_only_without_groups": true,
+  "test_used_for_selection": false,
+  "manual_reference_verified_against_all_stages": true,
+  "fixed_shared_pools_pruned_independently": true,
+  "protocol_version": "audit-v3"
+}

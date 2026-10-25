@@ -1,0 +1,20 @@
+{
+  "predictions_manual_trends.parquet": "74744e6f66553283f6342784a1f2365860015761d29058a18cb33efdfdb2b661",
+  "predictions_auto_fixed.parquet": "a23ef3c7b864ae2e0cb0a7cace27f79c5d43f48b2a5e2dfa948b9a0bda4f5311",
+  "selected_features.csv": "617bef02e5fa6ed00d21e4d2278618c28b9301fe319bafe647110272d4c5e893",
+  "predictions_manual.parquet": "52bc38c7f8b5ff6335e66dd5e4ef45a8812e295700d31c70423561166b6b457d",
+  "feature_distributions.csv": "a1d109097d1d5e64747902ecdd6a0d521a25c8b5c8a31a7c39ba690815051ca0",
+  "feature_importance.csv": "0cadb832a5216ce156ef3af2654ce9e32ea4b7697b5d28d6aceb9882237800dc",
+  "cost.json": "3017becede4a602891276abdb89cac004faa4e62625b2cf88d6908e7289c6a95",
+  "predictions_raw.parquet": "b1ef1064ec6c80c46e18ec7908c7ae402a8cb1298e0697e38636fe0d44ae1f6e",
+  "pruning.csv": "c8090b6a6e3a2b7889c1e9c64e3dcea428d4a308ffa08f3921e93538a833e096",
+  "predictions_auto_selected.parquet": "0c0499c9718f83b0194534beacf2d3ffe3b019f2855da992c4fa4dfc6ef86b7e",
+  "audit.csv": "30f9a9899e030cc53ecc8a8a889610e945950c2cb74c1ad3eebdca329a6ca3e8",
+  "fixed_pruning.csv": "4c3717e97044d3eecae7e04180b262693f9b5d343396949abfae20d91684d05e",
+  "locked_protocol.json": "dd5a1b532be5c4a2a235d6ec0bf3b8e34526792984e2aa6854574a332ee4f417",
+  "search.csv": "58905b6cbb534a69166ecfff2e14e54ddd96f35424891a203fce42b27da918f6",
+  "predictions_auto_pool.parquet": "2af7df393709f395ef88c9a91ef77eeedfd4c1f6c4362b95fc1ea6801e5861cd",
+  "comparison.csv": "2d3fbf966abb1422691b30888c39e203c714dcd432ec5615d20706434bdc96bc",
+  "original_run_sha256.json": "b51fecb2ef419b7b3d5ea8b203f64066000a902d3c54a86cfb63865a13d0b81d",
+  "bootstrap.json": "50a30a2e67dd2d4e28018c70a73abc541a06294f94ae44d232bf06c025d6226c"
+}

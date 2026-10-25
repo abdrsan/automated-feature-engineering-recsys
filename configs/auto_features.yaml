@@ -1,0 +1,9 @@
+windows: [1, 3, 7, 14, 21, 30, 60, 90, 180, null]
+max_features: 700
+near_constant_fraction: 0.9999
+max_missing_fraction: 0.999
+correlation_threshold: 0.9999
+selection_sizes: [32, 64, 96, 128]
+agent_rounds: 2
+agent_proposals_per_round: 8
+keep_min_logloss_gain: 0.0001

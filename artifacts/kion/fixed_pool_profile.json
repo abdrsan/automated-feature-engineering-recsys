@@ -1,0 +1,10 @@
+{
+  "pruning_scope": "fixed pool only, before cross-window comparisons",
+  "allowed_windows": [
+    7,
+    30,
+    null
+  ],
+  "after_pruning": 190,
+  "removed": 44
+}

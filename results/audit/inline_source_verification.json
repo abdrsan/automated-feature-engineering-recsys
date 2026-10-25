@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "functions_and_classes_reused_unchanged": [
+    "src/data.py:validate_data",
+    "src/datasets.py:positive_event",
+    "src/datasets.py:finish_interactions",
+    "src/datasets.py:kion_interactions",
+    "src/datasets.py:load_kion",
+    "src/datasets.py:yambda_interactions",
+    "src/datasets.py:load_yambda",
+    "src/split.py:TemporalSplit",
+    "src/split.py:temporal_split",
+    "src/model.py:fit_encoder",
+    "src/model.py:base_matrix",
+    "src/model.py:matrix_from_features",
+    "src/model.py:take_rows",
+    "src/model.py:fit_model",
+    "src/feature_spec.py:FeatureSpec",
+    "src/feature_spec.py:count_spec",
+    "src/feature_engine.py:_mask",
+    "src/feature_engine.py:_count",
+    "src/feature_engine.py:_rolling_expr",
+    "src/feature_engine.py:_all_history",
+    "src/feature_engine.py:generate_features",
+    "src/baseline_features.py:manual_features",
+    "src/baseline_features.py:manual_trends",
+    "src/auto_feature_generator.py:discover_entities",
+    "src/auto_feature_generator.py:generate_candidates",
+    "src/feature_selection.py:prune_candidates",
+    "src/feature_selection.py:prune_fixed_candidates"
+  ],
+  "no_project_imports": true
+}

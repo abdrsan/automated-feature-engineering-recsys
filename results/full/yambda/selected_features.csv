@@ -1,0 +1,65 @@
+keys,event,aggregation,window_days,value_column,denominator_event,long_window_days,smoothing
+"('user_id',)",like,event_rate,90.0,,all,,1.0
+"('user_id',)",like,event_rate,60.0,,all,,1.0
+"('user_id',)",like,event_rate,30.0,,all,,1.0
+"('user_id',)",like,event_rate,14.0,,all,,1.0
+"('user_id',)",like,event_rate,21.0,,all,,1.0
+"('user_id',)",like,event_rate,180.0,,all,,1.0
+"('user_id',)",like,event_rate,1.0,,all,,1.0
+"('user_id',)",like,event_rate,7.0,,all,,1.0
+"('user_id',)",dislike,recency,,,all,,1.0
+"('user_id',)",like,event_rate,,,all,,1.0
+"('user_id',)",like,event_rate,3.0,,all,,1.0
+"('user_id', 'item_id')",all,recency,,,all,,1.0
+"('user_id',)",like,recency,,,all,,1.0
+"('user_id', 'author')",like,event_rate,,,all,,1.0
+"('user_id',)",dislike,count,,,all,,1.0
+"('user_id',)",all,recency,,,all,,1.0
+"('user_id', 'item_id')",like,recency,,,all,,1.0
+"('user_id',)",dislike,count,180.0,,all,,1.0
+"('user_id', 'item_id')",all,count,,,all,,1.0
+"('user_id', 'author')",like,event_rate,180.0,,all,,1.0
+"('user_id',)",dislike,count,14.0,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,,,all,,1.0
+"('user_id',)",dislike,count,3.0,,all,,1.0
+"('user_id',)",dislike,count,60.0,,all,,1.0
+"('user_id', 'author')",like,event_rate,90.0,,all,,1.0
+"('user_id',)",dislike,count,7.0,,all,,1.0
+"('user_id', 'author')",like,recency,,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,180.0,,all,,1.0
+"('user_id',)",dislike,count,21.0,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,90.0,,all,,1.0
+"('user_id', 'item_id')",all,count,180.0,,all,,1.0
+"('user_id',)",dislike,count,90.0,,all,,1.0
+(),all,trend,7.0,,all,30.0,1.0
+"('user_id', 'item_id')",like,event_rate,60.0,,all,,1.0
+"('user_id', 'author')",like,event_rate,30.0,,all,,1.0
+"('user_id', 'item_id')",dislike,recency,,,all,,1.0
+"('user_id', 'author')",like,event_rate,60.0,,all,,1.0
+(),like,trend,7.0,,all,30.0,1.0
+"('user_id', 'author')",like,event_rate,21.0,,all,,1.0
+"('user_id',)",all,nunique,,item_id,all,,1.0
+"('user_id',)",dislike,count,1.0,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,30.0,,all,,1.0
+"('user_id', 'author')",like,count,,,all,,1.0
+"('user_id',)",like,trend,7.0,,all,30.0,1.0
+"('user_id',)",dislike,count,30.0,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,21.0,,all,,1.0
+"('user_id',)",all,trend,30.0,,all,90.0,1.0
+"('user_id',)",all,count,1.0,,all,,1.0
+"('user_id', 'author')",like,event_rate,1.0,,all,,1.0
+(),like,count,14.0,,all,,1.0
+"('user_id', 'author')",like,event_rate,14.0,,all,,1.0
+(),dislike,recency,,,all,,1.0
+"('user_id', 'author')",like,count,60.0,,all,,1.0
+"('author',)",like,event_rate,,,all,,1.0
+"('author',)",like,event_rate,180.0,,all,,1.0
+"('user_id',)",all,count,90.0,,all,,1.0
+"('user_id',)",all,trend,14.0,,all,60.0,1.0
+"('user_id',)",like,trend,14.0,,all,60.0,1.0
+(),dislike,count,14.0,,all,,1.0
+"('user_id', 'item_id')",like,event_rate,3.0,,all,,1.0
+"('author',)",like,count,30.0,,all,,1.0
+"('user_id',)",all,count,,,all,,1.0
+"('user_id',)",all,count,30.0,,all,,1.0
+"('category_id',)",dislike,count,30.0,,all,,1.0

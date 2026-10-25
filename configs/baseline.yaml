@@ -1,0 +1,10 @@
+seed: 42
+threads: 4
+split_fractions: [0.70, 0.775, 0.85]
+hyperparameter_trials: 20
+max_tuning_train_rows: 300000
+max_estimators: 600
+early_stopping_rounds: 40
+objective: logloss
+bootstrap_repeats: 300
+seeds: [42, 2024, 7]

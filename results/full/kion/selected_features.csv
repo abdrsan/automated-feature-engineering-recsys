@@ -1,0 +1,129 @@
+keys,event,aggregation,window_days,value_column,denominator_event,long_window_days,smoothing
+"('item_id',)",watch_high,event_rate,30.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,21.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,180.0,,all,,1.0
+"('user_id',)",all,mean,180.0,history_value,all,,1.0
+"('user_id',)",all,mean,90.0,history_value,all,,1.0
+"('item_id',)",watch_high,event_rate,90.0,,all,,1.0
+"('author',)",watch_high,event_rate,21.0,,all,,1.0
+"('author',)",watch_high,event_rate,7.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,7.0,,all,,1.0
+"('user_id',)",watch_high,event_rate,180.0,,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,180.0,,all,,1.0
+"('item_id',)",all,mean,180.0,history_value,all,,1.0
+"('item_id',)",watch_high,event_rate,3.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,14.0,,all,,1.0
+"('user_id',)",all,mean,60.0,history_value,all,,1.0
+"('author',)",watch_high,event_rate,3.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,60.0,,all,,1.0
+"('author',)",watch_high,event_rate,30.0,,all,,1.0
+"('author',)",watch_high,event_rate,14.0,,all,,1.0
+"('user_id',)",watch_high,event_rate,90.0,,all,,1.0
+"('item_id',)",watch_high,event_rate,1.0,,all,,1.0
+"('item_id', 'gender')",all,mean,1.0,history_value,all,,1.0
+"('author',)",all,mean,7.0,history_value,all,,1.0
+"('item_id',)",all,mean,90.0,history_value,all,,1.0
+(),all,count,180.0,,all,,1.0
+"('item_id',)",all,mean,1.0,history_value,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,90.0,,all,,1.0
+"('item_id',)",all,count,1.0,,all,,1.0
+"('item_id', 'gender')",all,mean,180.0,history_value,all,,1.0
+"('user_id',)",all,trend,14.0,,all,60.0,1.0
+"('user_id', 'category_id')",all,mean,180.0,history_value,all,,1.0
+"('user_id',)",all,mean,30.0,history_value,all,,1.0
+"('item_id',)",all,count,21.0,,all,,1.0
+"('item_id',)",watch_high,count,7.0,,all,,1.0
+(),all,count,60.0,,all,,1.0
+"('author',)",watch_high,event_rate,1.0,,all,,1.0
+"('item_id',)",watch_high,count,1.0,,all,,1.0
+"('author',)",all,mean,180.0,history_value,all,,1.0
+"('user_id',)",watch_high,event_rate,60.0,,all,,1.0
+"('item_id', 'gender')",watch_high,count,1.0,,all,,1.0
+"('item_id', 'gender')",watch_high,count,7.0,,all,,1.0
+"('item_id',)",all,mean,14.0,history_value,all,,1.0
+"('item_id',)",all,mean,30.0,history_value,all,,1.0
+"('author',)",all,mean,60.0,history_value,all,,1.0
+"('user_id',)",all,sum,,history_value,all,,1.0
+"('item_id',)",all,mean,60.0,history_value,all,,1.0
+"('author',)",watch_high,count,14.0,,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,14.0,,all,,1.0
+(),all,count,90.0,,all,,1.0
+"('user_id', 'category_id')",all,max,,history_value,all,,1.0
+"('author',)",watch_high,count,60.0,,all,,1.0
+"('user_id', 'category_id')",all,mean,90.0,history_value,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,1.0,,all,,1.0
+"('user_id',)",all,recency,,,all,,1.0
+"('item_id',)",all,max,,history_value,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,60.0,,all,,1.0
+"('item_id',)",all,count,7.0,,all,,1.0
+"('item_id',)",all,count,180.0,,all,,1.0
+"('item_id', 'gender')",watch_high,count,14.0,,all,,1.0
+"('item_id', 'gender')",all,count,1.0,,all,,1.0
+"('user_id', 'author')",all,sum,,history_value,all,,1.0
+"('item_id', 'gender')",watch_high,count,30.0,,all,,1.0
+(),watch_low,count,7.0,,all,,1.0
+"('user_id',)",all,trend,7.0,,all,30.0,1.0
+"('author',)",watch_high,event_rate,180.0,,all,,1.0
+"('user_id', 'category_id')",watch_high,event_rate,180.0,,all,,1.0
+(),all,count,30.0,,all,,1.0
+"('user_id',)",watch_low,count,180.0,,all,,1.0
+"('user_id',)",all,count,180.0,,all,,1.0
+"('author',)",watch_high,event_rate,90.0,,all,,1.0
+"('item_id', 'gender')",all,mean,7.0,history_value,all,,1.0
+"('user_id',)",watch_low,count,60.0,,all,,1.0
+"('user_id',)",all,max,,history_value,all,,1.0
+(),watch_high,trend,1.0,,all,7.0,1.0
+"('item_id', 'gender')",all,trend,3.0,,all,14.0,1.0
+"('user_id',)",watch_low,count,7.0,,all,,1.0
+"('item_id',)",all,mean,3.0,history_value,all,,1.0
+"('author',)",watch_high,count,1.0,,all,,1.0
+"('item_id',)",watch_high,recency,,,all,,1.0
+"('user_id',)",watch_low,count,90.0,,all,,1.0
+"('author',)",watch_high,count,7.0,,all,,1.0
+"('user_id', 'author')",all,max,,history_value,all,,1.0
+(),all,count,7.0,,all,,1.0
+"('author',)",watch_low,count,7.0,,all,,1.0
+"('category_id',)",all,count,30.0,,all,,1.0
+"('author',)",watch_low,recency,,,all,,1.0
+"('user_id',)",all,mean,14.0,history_value,all,,1.0
+"('user_id',)",watch_low,count,30.0,,all,,1.0
+"('item_id',)",watch_high,count,30.0,,all,,1.0
+"('item_id', 'gender')",watch_high,count,60.0,,all,,1.0
+"('item_id',)",all,trend,1.0,,all,7.0,1.0
+"('author',)",watch_high,recency,,,all,,1.0
+(),all,trend,1.0,,all,7.0,1.0
+"('item_id', 'gender')",watch_high,event_rate,3.0,,all,,1.0
+"('item_id', 'gender')",watch_high,event_rate,21.0,,all,,1.0
+"('item_id', 'gender')",watch_high,count,3.0,,all,,1.0
+"('user_id',)",all,mean,7.0,history_value,all,,1.0
+"('user_id',)",watch_high,recency,,,all,,1.0
+"('user_id',)",watch_low,count,14.0,,all,,1.0
+"('user_id', 'category_id')",watch_high,event_rate,60.0,,all,,1.0
+"('author',)",all,mean,1.0,history_value,all,,1.0
+"('item_id',)",all,mean,21.0,history_value,all,,1.0
+"('user_id',)",all,mean,21.0,history_value,all,,1.0
+"('item_id',)",watch_high,trend,1.0,,all,7.0,1.0
+"('item_id',)",watch_high,trend,30.0,,all,90.0,1.0
+(),watch_high,trend,3.0,,all,14.0,1.0
+(),all,mean,21.0,history_value,all,,1.0
+"('item_id',)",all,trend,3.0,,all,14.0,1.0
+(),watch_low,count,3.0,,all,,1.0
+"('item_id', 'gender')",watch_low,count,21.0,,all,,1.0
+"('item_id',)",watch_high,count,180.0,,all,,1.0
+(),all,count,3.0,,all,,1.0
+"('author',)",watch_high,count,30.0,,all,,1.0
+(),watch_high,event_rate,90.0,,all,,1.0
+"('author',)",all,mean,21.0,history_value,all,,1.0
+"('item_id', 'gender')",watch_high,trend,30.0,,all,90.0,1.0
+"('category_id',)",watch_high,trend,1.0,,all,7.0,1.0
+"('category_id',)",watch_low,count,30.0,,all,,1.0
+"('user_id',)",watch_low,recency,,,all,,1.0
+"('category_id',)",watch_low,count,7.0,,all,,1.0
+"('category_id',)",all,trend,14.0,,all,60.0,1.0
+"('item_id',)",all,trend,30.0,,all,90.0,1.0
+"('author',)",watch_low,count,3.0,,all,,1.0
+(),all,count,21.0,,all,,1.0
+"('author',)",watch_high,trend,3.0,,all,14.0,1.0
+"('user_id',)",watch_low,count,3.0,,all,,1.0
+"('user_id',)",watch_high,event_rate,14.0,,all,,1.0
+(),watch_high,event_rate,180.0,,all,,1.0

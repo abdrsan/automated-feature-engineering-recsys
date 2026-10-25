@@ -1,0 +1,8 @@
+{
+  "warmup_end": 98923,
+  "warmup_last_timestamp": "1970-02-05 17:02:35",
+  "dimensions": 16,
+  "basis_items": 46293,
+  "unknown_item_fraction": 0.49069850820299654,
+  "explained_variance": 0.15291388554751068
+}

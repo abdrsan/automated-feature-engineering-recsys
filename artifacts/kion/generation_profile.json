@@ -1,0 +1,96 @@
+{
+  "manual": {
+    "seconds": 22.011900334007805,
+    "memory_mb": 536.8761386871338,
+    "n_features": 102,
+    "groups": [
+      {
+        "entity": "user",
+        "seconds": 3.1035365420102607,
+        "n_features": 18
+      },
+      {
+        "entity": "item",
+        "seconds": 0.4442760410020128,
+        "n_features": 18
+      },
+      {
+        "entity": "user_item",
+        "seconds": 6.232246625004336,
+        "n_features": 18
+      },
+      {
+        "entity": "user_category",
+        "seconds": 4.306580707983812,
+        "n_features": 18
+      },
+      {
+        "entity": "user_author",
+        "seconds": 7.868041208013892,
+        "n_features": 18
+      }
+    ],
+    "cutoff": "[T - window, T); all_history < T",
+    "audit_passed": true,
+    "peak_process_mb": 2356.1875,
+    "key": "9e458165ae8d46cac7ba33ca8de406aca75bd11c96704047957ceb8d10ba2af6"
+  },
+  "additional_candidates": {
+    "seconds": 35.718053624994354,
+    "memory_mb": 2702.9437589645386,
+    "n_features": 519,
+    "groups": [
+      {
+        "entity": "global",
+        "seconds": 0.4985937089950312,
+        "n_features": 57
+      },
+      {
+        "entity": "user",
+        "seconds": 3.0600925000035204,
+        "n_features": 45
+      },
+      {
+        "entity": "item",
+        "seconds": 7.932506749988534,
+        "n_features": 45
+      },
+      {
+        "entity": "user_item",
+        "seconds": 5.325480041006813,
+        "n_features": 45
+      },
+      {
+        "entity": "category",
+        "seconds": 0.9198967499833088,
+        "n_features": 57
+      },
+      {
+        "entity": "user_category",
+        "seconds": 5.0440540840209,
+        "n_features": 45
+      },
+      {
+        "entity": "author",
+        "seconds": 3.561608708987478,
+        "n_features": 59
+      },
+      {
+        "entity": "user_author",
+        "seconds": 6.156152417010162,
+        "n_features": 45
+      },
+      {
+        "entity": "item_gender",
+        "seconds": 2.8318598329788074,
+        "n_features": 59
+      }
+    ],
+    "cutoff": "[T - window, T); all_history < T",
+    "audit_passed": true,
+    "peak_process_mb": 5225.5625,
+    "key": "95e153f35bbcd73853f59d2d7764603389aa4a7b3138d091713899273e3e7857"
+  },
+  "n_candidates": 621,
+  "n_after_pruning": 493
+}

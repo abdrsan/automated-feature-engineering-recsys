@@ -1,0 +1,6178 @@
+{
+  "manual_name": "plus_metadata_relations",
+  "manual_features": [
+    "user__all__count__all",
+    "user__all__count__7d",
+    "user__all__count__30d",
+    "user__all__recency__all",
+    "user__dislike__count__all",
+    "user__dislike__count__7d",
+    "user__dislike__count__30d",
+    "user__dislike__recency__all",
+    "user__like__count__all",
+    "user__like__count__7d",
+    "user__like__count__30d",
+    "user__like__recency__all",
+    "item__all__count__all",
+    "item__all__count__7d",
+    "item__all__count__30d",
+    "item__all__recency__all",
+    "item__dislike__count__all",
+    "item__dislike__count__7d",
+    "item__dislike__count__30d",
+    "item__dislike__recency__all",
+    "item__like__count__all",
+    "item__like__count__7d",
+    "item__like__count__30d",
+    "item__like__recency__all",
+    "user_item__all__count__all",
+    "user_item__all__count__7d",
+    "user_item__all__count__30d",
+    "user_item__all__recency__all",
+    "user_item__dislike__count__all",
+    "user_item__dislike__count__7d",
+    "user_item__dislike__count__30d",
+    "user_item__dislike__recency__all",
+    "user_item__like__count__all",
+    "user_item__like__count__7d",
+    "user_item__like__count__30d",
+    "user_item__like__recency__all",
+    "user_category__all__count__all",
+    "user_category__all__count__7d",
+    "user_category__all__count__30d",
+    "user_category__all__recency__all",
+    "user_category__dislike__count__all",
+    "user_category__dislike__count__7d",
+    "user_category__dislike__count__30d",
+    "user_category__dislike__recency__all",
+    "user_category__like__count__all",
+    "user_category__like__count__7d",
+    "user_category__like__count__30d",
+    "user_category__like__recency__all",
+    "user_author__all__count__all",
+    "user_author__all__count__7d",
+    "user_author__all__count__30d",
+    "user_author__all__recency__all",
+    "user_author__dislike__count__all",
+    "user_author__dislike__count__7d",
+    "user_author__dislike__count__30d",
+    "user_author__dislike__recency__all",
+    "user_author__like__count__all",
+    "user_author__like__count__7d",
+    "user_author__like__count__30d",
+    "user_author__like__recency__all"
+  ],
+  "manual_params": {
+    "num_leaves": 31,
+    "min_child_samples": 267,
+    "learning_rate": 0.07282676635774393,
+    "colsample_bytree": 0.6759156281069316,
+    "reg_lambda": 0.7726148927746461,
+    "reg_alpha": 0.002528661927134373
+  },
+  "manual_selection_pool": [
+    "base_categorical",
+    "plus_user_temporal",
+    "plus_item_temporal",
+    "plus_user_item",
+    "plus_user_category",
+    "plus_metadata_relations",
+    "manual",
+    "manual_plus_trend"
+  ],
+  "manual_selection_data": "validation_search",
+  "auto_name": "auto_adaptive_top32",
+  "auto_features": [
+    "user__like__event_rate__30d__all",
+    "user__like__event_rate__60d__all",
+    "user__like__event_rate__180d__all",
+    "user__like__event_rate__21d__all",
+    "user__like__event_rate__90d__all",
+    "user__dislike__recency__all",
+    "user__like__event_rate__1d__all",
+    "user__like__event_rate__7d__all",
+    "user_item__all__recency__all",
+    "user__like__event_rate__3d__all",
+    "user__like__event_rate__all__all",
+    "user__like__event_rate__14d__all",
+    "user__like__recency__all",
+    "user__dislike__count__180d",
+    "user__all__recency__all",
+    "user__dislike__count__all",
+    "user_author__like__event_rate__all__all",
+    "user_item__like__event_rate__all__all",
+    "user__dislike__count__14d",
+    "user_author__like__event_rate__180d__all",
+    "user__dislike__count__7d",
+    "user_item__like__recency__all",
+    "user_author__like__event_rate__90d__all",
+    "user_item__all__count__all",
+    "user__dislike__count__60d",
+    "user__dislike__count__1d",
+    "user__dislike__count__3d",
+    "user_author__like__event_rate__60d__all",
+    "user_author__like__recency__all",
+    "user__dislike__count__90d",
+    "user_item__like__event_rate__180d__all",
+    "user_item__all__count__180d"
+  ],
+  "auto_params": {
+    "num_leaves": 31,
+    "min_child_samples": 267,
+    "learning_rate": 0.07282676635774393,
+    "colsample_bytree": 0.6759156281069316,
+    "reg_lambda": 0.7726148927746461,
+    "reg_alpha": 0.002528661927134373
+  },
+  "selected_specs": [
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    }
+  ],
+  "all_specs": [
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "user_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "item_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "count",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "recency",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 21,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 60,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 90,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 180,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": null,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 7,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": 30,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "nunique",
+      "window_days": null,
+      "value_column": "item_id",
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 1,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 7,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 3,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 14,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 14,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 60,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "all",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "like",
+      "aggregation": "trend",
+      "window_days": 30,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 90,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "item_id"
+      ],
+      "event": "dislike",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "category_id"
+      ],
+      "event": "dislike",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id",
+        "author"
+      ],
+      "event": "dislike",
+      "aggregation": "trend",
+      "window_days": 7,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": 30,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 39,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 84,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 9,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 20,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 42,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 29,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 117,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 252,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 58,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 126,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 5,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 10,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 2,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "like",
+      "aggregation": "event_rate",
+      "window_days": 4,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 5,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    },
+    {
+      "keys": [
+        "user_id"
+      ],
+      "event": "dislike",
+      "aggregation": "count",
+      "window_days": 10,
+      "value_column": null,
+      "denominator_event": "all",
+      "long_window_days": null,
+      "smoothing": 1.0
+    }
+  ],
+  "base_names": [
+    "user_id",
+    "item_id",
+    "category_id",
+    "author",
+    "is_organic"
+  ],
+  "shared_windows": [
+    60,
+    14,
+    180
+  ],
+  "warmup_end": 98923,
+  "search_only": true,
+  "locked_before_audit_and_test": true,
+  "embedding_features": [
+    "svd_dot",
+    "svd_cosine",
+    "svd_profile_norm",
+    "svd_item_norm"
+  ],
+  "embedding_validation_logloss": 0.17372619945687107
+}

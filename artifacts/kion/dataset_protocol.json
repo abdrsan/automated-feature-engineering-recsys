@@ -1,0 +1,14 @@
+{
+  "name": "KION",
+  "target": "reported watched_pct >= 50 among observed aggregate watches",
+  "events": [
+    "watch_high",
+    "watch_low"
+  ],
+  "cohort": "user_id % 1 == 0; all valid-target records; no temporal row truncation",
+  "time": "last_watch_dt at day precision; exclude entire target day",
+  "history_value": "reported watched_pct (past records only)",
+  "category_id": "first listed genre",
+  "author": "first listed director",
+  "limitations": "One aggregate user-item record, not session/impression log; no CTR or full-catalog retrieval claim; static metadata assumed"
+}

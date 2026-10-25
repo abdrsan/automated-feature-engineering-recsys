@@ -1,0 +1,18 @@
+[
+  {
+    "dataset": "kion",
+    "mode": "full",
+    "status": "PASS",
+    "rows": 1594519,
+    "selected_specs": 128,
+    "predictions_rescored": true
+  },
+  {
+    "dataset": "yambda",
+    "mode": "full",
+    "status": "PASS",
+    "rows": 989232,
+    "selected_specs": 64,
+    "predictions_rescored": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "runs": [
+    {
+      "dataset": "kion",
+      "mode": "full",
+      "rows": 1594519,
+      "methods": 6,
+      "unique_final_models_replayed": 6,
+      "same_parameters_verified": true,
+      "same_test_population_verified": true,
+      "independent_classification_metrics": 3,
+      "status": "PASS"
+    },
+    {
+      "dataset": "yambda",
+      "mode": "full",
+      "rows": 989232,
+      "methods": 6,
+      "unique_final_models_replayed": 6,
+      "same_parameters_verified": true,
+      "same_test_population_verified": true,
+      "independent_classification_metrics": 3,
+      "status": "PASS"
+    }
+  ],
+  "metric_comparisons": 36,
+  "max_metric_difference": 2.220446049250313e-16
+}
